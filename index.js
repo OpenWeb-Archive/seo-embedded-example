@@ -2,7 +2,7 @@ const express = require("express");
 const fetch = require("node-fetch");
 const ejs = require("ejs");
 const app = express();
-app.listen(8081, function () {
+app.listen(process.env.PORT || 8081, function () {
   console.log("Express is running on port 8081");
 });
 
