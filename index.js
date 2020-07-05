@@ -16,7 +16,7 @@ app.get(
   "/",
   asyncMiddleware(async (req, res, next) => {
     res.set('Content-Encoding', 'gzip');
-    res.set('Accept-Encoding', 'identity')
+    res.set('Accept-Encoding', 'gzip')
     res.set('Content-type', 'text/html; charset=utf-8');
     const convResponse = await fetch(
       "http://extractify.spot.im/conversation/sp_IjnMf2Jd/24540557"
