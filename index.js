@@ -15,11 +15,12 @@ const asyncMiddleware = (fn) => (req, res, next) => {
 app.get(
   "/",
   asyncMiddleware(async (req, res, next) => {
+    res.set('Content-Encoding', 'gzip');
+    res.set('Content-type', 'text/html; charset=utf-8');
     const convResponse = await fetch(
       "http://extractify.spot.im/conversation/sp_IjnMf2Jd/24540557"
     );
     const convHtml = await convResponse.text();
-
     res.render("pages/html.ejs", { body: convHtml });
   })
 );
