@@ -16,7 +16,7 @@ app.get(
   "/",
   asyncMiddleware(async (req, res, next) => {
     const convResponse = await fetch(
-      "https://extractify.spot.im/conversation/sp_ly3RvXf6/p0st2"
+      "http://extractify.spot.im/conversation/sp_IjnMf2Jd/24540557"
     );
     const convHtml = await convResponse.text();
 
